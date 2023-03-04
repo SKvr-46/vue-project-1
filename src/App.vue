@@ -25,7 +25,10 @@ export default defineComponent({
           </li>
         </ul>
     </div>
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
+
   </div>
 </template>
 
@@ -34,16 +37,18 @@ export default defineComponent({
 
 .header {
   width: 100%;
-  height: 100px;
+  height: auto;
   background-color: gray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
 }
 
 .header .logo {
+  font-size: 28px;
   background-color: aqua;
-  padding: 20px;
+  padding: 30px;
   display: grid;
   place-items: center;
   margin-left: 30px;
@@ -56,15 +61,21 @@ export default defineComponent({
 ul {
   display: flex;
   flex-direction: row;
+  margin-right: 20px;
 }
 
 ul li {
   padding: 20px;
   list-style: none;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-
-
+.container {
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 </style>
 
 

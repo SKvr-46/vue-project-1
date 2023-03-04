@@ -20,13 +20,16 @@ export default defineComponent({
             countUp,
             addCount
         }
+    },
+    props: {
+        Title: String
     }
 })
 </script>
 
 <template>
     <div>
-        <h1>About</h1>
+        <h1>{{Title}}</h1>
         <p>This is the about page.</p>
         <router-link to="/">Home</router-link>
         <button @click="addCount">+</button>

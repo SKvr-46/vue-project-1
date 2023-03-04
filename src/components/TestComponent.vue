@@ -12,7 +12,7 @@ export default {
     setup(){
         const message = ref("Hello world")
         return {
-        message
+        message,
         }
     },
 }
