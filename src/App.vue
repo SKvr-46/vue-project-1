@@ -15,17 +15,21 @@ export default defineComponent({
 <template>
   <div>
     <div class="header">
-      <div class="logo"><router-link to="/" class="link">My App</router-link></div>
-        <ul>
-          <li>
-            <router-link to="/" class="link">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/about" class="link">About</router-link>
-          </li>
-        </ul>
+      <div class="top-container">
+        <div class="logo"><router-link to="/" class="logo-link">My App</router-link></div>
+        <div>
+          <ul>
+            <li>
+              <router-link to="/" class="link">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/about" class="link">About</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="container">
+    <div class="main-container">
       <router-view></router-view>
     </div>
 
@@ -39,29 +43,46 @@ export default defineComponent({
   width: 100%;
   height: auto;
   background-color: gray;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   
 }
 
-.header .logo {
+.logo-link {
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.header .top-container .logo {
   font-size: 28px;
   background-color: aqua;
   padding: 30px;
   display: grid;
   place-items: center;
-  margin-left: 30px;
   font-weight: bold;
 }
   .link{
   text-decoration: none;
+  transition: all .4s;
+}
+
+.link:hover {
+  color: aqua;
 }
 
 ul {
   display: flex;
   flex-direction: row;
-  margin-right: 20px;
 }
 
 ul li {
@@ -69,11 +90,11 @@ ul li {
   list-style: none;
   font-size: 20px;
   font-weight: 800;
+  color: black;
 }
 
-.container {
+.main-container {
   width: 92%;
-  max-width: 1280px;
   margin: 0 auto;
 }
 </style>

@@ -5,7 +5,7 @@ import CalcComponent from '@/components/CalcComponent.vue'
 export default {
     name: "HomeView",
     components: {
-        CalcComponent
+        CalcComponent,
     },
     props:{
         Title: String
