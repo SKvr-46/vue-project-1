@@ -231,6 +231,7 @@ export default defineComponent({
     justify-content: center; /* 列を中央寄りに配置する */
     align-content: center; /* 行を中央寄りに配置する */
     margin-top: 20px;
+
     }
 
     .calc-btn  {
@@ -243,6 +244,25 @@ export default defineComponent({
         font-size: 60px;
         border: 2px solid gray;
         border-bottom: 4px solid gray;
+    }
+
+    @media(max-width:767px) {
+        .container {
+        width: 90%;
+    }
+
+    .calculator {
+        width: 90%;
+    }
+
+    .display {
+        width: 90%;
+    }
+
+    .buttons {
+        width: 80%;
+    }
+
     }
 
     @media(hover:hover){

@@ -84,6 +84,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 92%;
   margin: 0 auto;
 }
@@ -98,12 +99,12 @@ a {
 }
 
 
-ul {
+.top-container ul {
   display: flex;
   flex-direction: row;
 }
 
-ul li {
+.top-container ul li {
   padding: 20px;
   list-style: none;
   font-size: 20px;
@@ -145,6 +146,12 @@ ul li {
   }
   .link:active {
     color: aqua;
+  }
+}
+
+@media(max-width:767px){
+  .top-container ul li{
+    font-size: 16px;
   }
 }
 
