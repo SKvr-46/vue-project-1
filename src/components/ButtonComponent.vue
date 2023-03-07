@@ -24,6 +24,12 @@ export default defineComponent({
 </template>
 
 <style>
+    @media(hover:hover){
+        .btn:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    }
     .btn {
         margin-bottom: 10px;
         background-color: rgba(152, 52, 223, 0.7); 
@@ -40,8 +46,12 @@ export default defineComponent({
         transition: all .2s;
     }
 
-    .btn:hover {
-        opacity: 0.5;
-        cursor: pointer;
+@media(hover:none){
+    .btn {
+        -webkit-tap-highlight-color: transparent;
     }
+    .btn:active {
+        opacity: 0.5;
+    }
+}
 </style>

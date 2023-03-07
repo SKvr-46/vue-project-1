@@ -47,5 +47,18 @@ export default defineComponent({
         font-weight: 700;
         font-size: 28px;
     }
+
+    @media(max-width: 1000px){
+    .history-wrapper {
+        background-color: gray;
+        margin: 20px auto 20px auto;
+        width: 80%;
+        height: 680px;
+        border: 2px ridge black;
+        overflow: hidden;
+    }
+
+    }
+
 </style>
     

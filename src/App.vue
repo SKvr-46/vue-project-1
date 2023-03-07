@@ -45,6 +45,16 @@ export default defineComponent({
 
 <style scoped>
 
+@media(hover :hover){
+  .link{
+  text-decoration: none;
+  transition: all .4s;
+}
+  .link:hover {
+      color: aqua;
+}
+}
+
 .header {
   width: 100%;
   height: auto;
@@ -77,14 +87,7 @@ a {
   place-items: center;
   font-weight: bold;
 }
-  .link{
-  text-decoration: none;
-  transition: all .4s;
-}
 
-.link:hover {
-  color: aqua;
-}
 
 ul {
   display: flex;
@@ -124,6 +127,16 @@ ul li {
 }
 .font:hover {
   opacity: 0.5;
+}
+
+@media(hover:none) {
+  .link {
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+  }
+  .link:active {
+    color: aqua;
+  }
 }
 
 </style>

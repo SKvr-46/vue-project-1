@@ -150,7 +150,7 @@ export default defineComponent({
             </div>
         </div>
         <div class="showall-container">
-                <ButtonComponent :handleClick="toggleShowAllWords" :label='showAll ? "閉じる" : "See All Words"'/>
+                <ButtonComponent :handleClick="toggleShowAllWords" :label='showAll ? "Close" : "See All Words"'/>
                 <p v-for="(value, key) in counts" :key="key" v-show="showAll===true">{{ key }}: {{ value }}</p>
         </div>
     </div>
@@ -177,9 +177,9 @@ export default defineComponent({
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0,255,255,0.6);
+        background-color: rgba(0,255,255,0.3);
         border-radius: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         border: 2px ridge black;
     }
 

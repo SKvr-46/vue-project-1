@@ -245,9 +245,30 @@ export default defineComponent({
         border-bottom: 4px solid gray;
     }
 
-    .calc-btn:hover {
+    @media(hover:hover){
+        .calc-btn:hover {
         opacity: 0.5;
+        }
+    }
+
+    @media(hover:none){
+        .cals-btn {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .calc-btn:active {
+        opacity: 0.5;
+        }
     }
     
+    @media(max-width: 1000px){
+        .container {
+            flex-direction: column;
+        }
+
+        .history-area {
+            margin-top: 50px;
+            width: 80%;
+        }
+    }
 
 </style>
