@@ -4,6 +4,7 @@
 <script>
 import { defineComponent } from 'vue'
 
+
 import router from './router'
 
 export default defineComponent({
@@ -16,14 +17,14 @@ export default defineComponent({
   <div>
     <div class="header">
       <div class="top-container">
-        <div class="logo"><router-link to="/" class="logo-link">My App</router-link></div>
+        <div class="logo"><router-link to="/" class="logo-link">My Vue3 App</router-link></div>
         <div>
           <ul>
             <li>
-              <router-link to="/" class="link">Home</router-link>
+              <router-link to="/" class="link">Calclator</router-link>
             </li>
             <li>
-              <router-link to="/about" class="link">About</router-link>
+              <router-link to="/textanalyzer" class="link">Text Analyzer</router-link>
             </li>
           </ul>
         </div>
@@ -32,7 +33,12 @@ export default defineComponent({
     <div class="main-container">
       <router-view></router-view>
     </div>
-
+    <footer class="footer">
+      <address>koeich4@gmail.com</address>  
+      <a href="https://github.com/SKvr-46/vue-project-1.git">
+      <font-awesome-icon :icon="['fab', 'github']" :size="'2x'" class="font"/>
+      </a>
+    </footer>
   </div>
 </template>
 
@@ -97,6 +103,29 @@ ul li {
   width: 92%;
   margin: 0 auto;
 }
+
+.footer {
+  margin-top: 100px;
+  width: 100%;
+  background-color: gray;
+  height: 300px;
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0 0 100px;
+}
+
+.footer address {
+  margin-bottom: 20px;
+}
+
+.font {
+  transition: all .4s;
+}
+.font:hover {
+  opacity: 0.5;
+}
+
 </style>
 
 

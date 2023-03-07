@@ -1,7 +1,7 @@
 <script>
+import {defineComponent} from "vue";
 
-
-export default {
+export default defineComponent({
     setup() {
     },
     props:{
@@ -10,7 +10,7 @@ export default {
         }
     }
 
-}
+})
 </script>
 
 <template>

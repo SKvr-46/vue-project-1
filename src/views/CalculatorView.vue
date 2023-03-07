@@ -1,16 +1,16 @@
 <script>
-
 import CalcComponent from '@/components/CalcComponent.vue'
+import { defineComponent } from 'vue'
 
-export default {
-    name: "HomeView",
+export default defineComponent({
+    name: "CalculatorView",
     components: {
         CalcComponent,
     },
     props:{
         Title: String
     },
-}
+})
 </script>
 
 

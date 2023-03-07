@@ -1,10 +1,13 @@
 <script>
-import {ref, reactive} from "vue";
+import {ref, reactive, defineComponent, onMounted,computed} from "vue";
+import { useStore } from "vuex";
+import ButtonComponent from "./ButtonComponent.vue";
 import HistoryComponent from './HistoryComponent.vue';
 
-export default {
+export default defineComponent({
     components: {
         HistoryComponent,
+        ButtonComponent,
     },
     setup() {
 
@@ -12,9 +15,19 @@ export default {
     let currentNumber = "";
     let currentOperator = null;
     let previousNumber = null;
+    const store = useStore()
+
+    onMounted(() => {
+        store.commit("increment")
+    })
+
+    const pageVisitCount = computed(() => {
+        return store.state.pageVisitCount
+    })
 
     //formulaSetの最大数
     const maxCount = 10
+        //Historyにも渡す
     const formulaSet = reactive([])
 
     //formulaSetに履歴を入れる。10を超えると最初の式は消える
@@ -135,27 +148,35 @@ export default {
         formulaSet,
         addToFormulaSet,
         handleButton,
-        clearAll
+        clearAll,
+        pageVisitCount
     }
     },
 
-}
+})
 </script>
 
 
 
 
 <template>
+    <p>{{pageVisitCount >= 2 ? `You have mounted this application's page ${pageVisitCount} times` : `You have mounted this application's page ${pageVisitCount} time`}}</p>
     <div class="container">
         <div class="calculator">
             <div class="display">{{ display }}</div>
             <div class="buttons">
-                <button v-for="button in buttons" v-bind:key="button.label" @click="handleButton(button)">{{ button.label }}</button>
+                <ButtonComponent 
+                v-for="button in buttons" 
+                v-bind:key="button.label" 
+                :handleClick="() => handleButton(button)" 
+                :label="button.label"
+                class="calc-btn"
+                />
             </div>
         </div>
         <div class="history-area">
             <HistoryComponent :formulaSet="formulaSet"/>
-            <button @click="clearAll" class="clear-btn">Clear All</button>
+            <ButtonComponent :handleClick="clearAll" label="Clear All"/>
         </div>
     </div>
     
@@ -163,6 +184,10 @@ export default {
 
 
 <style scoped>
+    p {
+        font-size: 20px;
+        font-weight: 800;
+    }
     .container {
         display: flex;
         flex-direction: row;
@@ -174,7 +199,7 @@ export default {
     .calculator {
         background-color: black;
         width: 500px;
-        height: 750px;
+        height: 780px;
         display: grid;
         place-items: center;
         border-radius: 20px;
@@ -182,7 +207,7 @@ export default {
 
     .display {
         background-color: rgba(128,128,128,0.7);
-        margin-top: 10px;
+        margin-top: 20px;
         opacity: 1;
         width: 400px;
         height: 200px;
@@ -208,11 +233,10 @@ export default {
     margin-top: 20px;
     }
 
-    button  {
+    .calc-btn  {
         background: blue;
         width: 80px;
         height: 80px;
-        border: none;
         border-radius: 100%;
         color: white;
         cursor: pointer;
@@ -221,19 +245,9 @@ export default {
         border-bottom: 4px solid gray;
     }
 
-    button:hover {
+    .calc-btn:hover {
         opacity: 0.5;
     }
-
-    .history-area .clear-btn {
-        margin-bottom: 10px;
-        background-color: rgba(152, 52, 223, 0.7);
-        border: 4px ridge gray;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        border-radius: 0%;
-        font-size: 28px;
-    }
+    
 
 </style>

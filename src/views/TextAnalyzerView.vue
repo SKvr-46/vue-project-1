@@ -1,13 +1,13 @@
 <script>
 import { defineComponent, ref } from 'vue'
-import TestComponent from "@/components/TestComponent.vue"
+import TextComponent from "@/components/TextComponent.vue"
 import router from '../router'
 
 export default defineComponent({
-    name: 'AboutView',
+    name: 'TextAnalyzerView',
     router, //ルーティング機能
     components: {
-        TestComponent
+        TextComponent
     },
     setup(){
         const countUp = ref(0)
@@ -30,10 +30,7 @@ export default defineComponent({
 <template>
     <div>
         <h1>{{Title}}</h1>
-        <p>This is the about page.</p>
-        <router-link to="/">Home</router-link>
-        <button @click="addCount">+</button>
-        <TestComponent :count="countUp"/>
+        <TextComponent/>
     </div>
 </template>
 
