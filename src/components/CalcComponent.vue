@@ -38,7 +38,7 @@ export default defineComponent({
     formulaSet.push(formula) // 新しい要素を末尾に追加
     }  
 
-    //リアクティブなデータは、= []では変えられない。spliceも使える
+    //リアクティブなデータは、= []では変えられない。spliceで直接内容変更する
     const clearAll = () => {
         formulaSet.length = 0
         display.value = ""

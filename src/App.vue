@@ -15,7 +15,7 @@ export default defineComponent({
 
 <template>
   <div>
-    <div class="header">
+    <header class="header">
       <div class="top-container">
         <div class="logo"><router-link to="/" class="logo-link">My Vue3 App</router-link></div>
         <div>
@@ -29,10 +29,12 @@ export default defineComponent({
           </ul>
         </div>
       </div>
-    </div>
-    <div class="main-container">
+    </header>
+
+    <main class="main-container">
       <router-view></router-view>
-    </div>
+    </main>
+
     <footer class="footer">
       <address>koeich4@gmail.com</address>  
       <a href="https://github.com/SKvr-46/vue-project-1.git">
@@ -44,6 +46,12 @@ export default defineComponent({
 
 
 <style scoped>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 @media(hover :hover){
   .link{
@@ -59,6 +67,7 @@ export default defineComponent({
   width: 100%;
   height: auto;
   background-color: gray;
+  margin: 0 auto;
   
 }
 
