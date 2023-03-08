@@ -32,7 +32,10 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const { title, description } = to.meta
     document.title = title
-    document.description = description
+    const descriptionMetaTag = document.querySelector('meta[name="description"]')
+    if (descriptionMetaTag) {
+        descriptionMetaTag.setAttribute('content', description)
+    }
         next() 
         }
     )
