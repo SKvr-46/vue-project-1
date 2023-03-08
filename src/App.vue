@@ -38,7 +38,7 @@ export default defineComponent({
     <footer class="footer">
       <address>koeich4@gmail.com</address>  
       <a href="https://github.com/SKvr-46/vue-project-1.git">
-      <font-awesome-icon :icon="['fab', 'github']" :size="'2x'" class="font"/>
+      <font-awesome-icon :icon="['fab', 'github']" :size="'lg'" class="font"/>
       </a>
     </footer>
   </div>
@@ -64,12 +64,14 @@ export default defineComponent({
 }
 
 .header {
+  position: relative;
   width: 100%;
   height: auto;
   background-color: gray;
   margin: 0 auto;
   
 }
+
 
 .logo-link {
   text-decoration: none;
@@ -90,7 +92,7 @@ a {
 }
 
 .header .top-container .logo {
-  font-size: 28px;
+  font-size: 24px;
   background-color: aqua;
   padding: 30px;
   display: grid;
@@ -122,10 +124,10 @@ a {
   width: 100%;
   background-color: gray;
   height: 300px;
-  font-size: 28px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
-  padding: 100px 0 0 100px;
+  padding: calc(1vw + 20px);
 }
 
 .footer address {
@@ -153,7 +155,16 @@ a {
   .top-container ul li{
     font-size: 16px;
   }
+  .header .top-container .logo {
+      font-size: 18px;
+      text-align: center;
 }
+  .link {
+    display: grid;
+    text-align: center;
+  }
+}
+
 
 </style>
 
