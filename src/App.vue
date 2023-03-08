@@ -3,13 +3,13 @@
 
 <script>
 import { defineComponent } from 'vue'
-
-
 import router from './router'
+
 
 export default defineComponent({
   name: 'App',
-  router //ルーティング機能
+  router, //ルーティング機能
+  
 })
 </script>
 
