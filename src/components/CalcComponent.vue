@@ -288,11 +288,17 @@ export default defineComponent({
     }
     
     @media(max-width: 767px){
+        .buttons {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+        }
         .container {
             flex-direction: column;
         }
         .calculator {
-            height: 900px;
+            height: 780px;
         }
 
         .history-area {
