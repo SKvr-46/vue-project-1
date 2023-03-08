@@ -184,7 +184,7 @@ export default defineComponent({
     }
 
     .input-container textarea {
-        max-width: 80%;
+        max-width: 90%;
     }
 
     .searchword-container,
@@ -194,24 +194,22 @@ export default defineComponent({
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        max-width: 40%;
+        max-width: 100%;
         
     }
 
     .result-container {
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
-        
-        
+        flex-wrap: wrap;
     }
 
     .showall-container {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        width: 60%;
-        max-width: 70%;
+        width: 100%;
+        max-width: 100%;
     }
 
 </style>

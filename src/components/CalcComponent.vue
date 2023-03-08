@@ -194,10 +194,14 @@ export default defineComponent({
         justify-content: space-around;
         align-items: center;
         background-color: rgba(14, 144, 23, 0.339);
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
     }
 
     .calculator {
         background-color: black;
+        position: relative;
         width: 500px;
         height: 780px;
         display: grid;
@@ -207,6 +211,8 @@ export default defineComponent({
 
     .display {
         background-color: rgba(128,128,128,0.7);
+        position: absolute;
+        top: 10px;
         margin-top: 20px;
         opacity: 1;
         width: 400px;
@@ -215,24 +221,23 @@ export default defineComponent({
         font-size: 50px;
         font-weight: 800;
         overflow: hidden;
-        display: flex;
-        justify-content: right;
-        align-items: center;
         border-radius: 10px;
     }
 
     .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    position: absolute;
+    top: 250px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 修正 */
     grid-template-rows: repeat(6, 1fr);
-    width: 200px;
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    justify-content: center; /* 列を中央寄りに配置する */
-    align-content: center; /* 行を中央寄りに配置する */
+    width: 100%; /* 修正 */
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
     margin-top: 20px;
+    width: 90%;
+}
 
-    }
 
     .calc-btn  {
         background: blue;
@@ -245,6 +250,7 @@ export default defineComponent({
         border: 2px solid gray;
         border-bottom: 4px solid gray;
     }
+
 
     @media(max-width:767px) {
         .container {
@@ -283,6 +289,9 @@ export default defineComponent({
     @media(max-width: 1000px){
         .container {
             flex-direction: column;
+        }
+        .calculator {
+            height: 900px;
         }
 
         .history-area {

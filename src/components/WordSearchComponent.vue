@@ -43,6 +43,7 @@ export default defineComponent({
 <style>
 .container {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -52,7 +53,7 @@ export default defineComponent({
     padding: 20px;
     font-size: 20px;
     font-weight: 800;
-    width: 100%;
+    width: 80%;
     border: 2px ridge black;
 
 }
