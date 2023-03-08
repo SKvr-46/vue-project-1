@@ -239,17 +239,18 @@ export default defineComponent({
 }
 
 
-    .calc-btn  {
-        background: blue;
-        width: 80px;
-        height: 80px;
-        border-radius: 100%;
-        color: white;
-        cursor: pointer;
-        font-size: 60px;
-        border: 2px solid gray;
-        border-bottom: 4px solid gray;
-    }
+.calc-btn  {
+    background: blue;
+    width: calc(1vw + 50px); /* ボタンの最小幅は70pxで、画面の幅に応じて伸縮します */
+    height: calc(1vw + 50px); /* ボタンの最小高さは70pxで、画面の幅に応じて伸縮します */
+    border-radius: 100%;
+    color: white;
+    cursor: pointer;
+    font-size: calc(1vw + 50px);
+    border: 2px solid gray;
+    border-bottom: 4px solid gray;
+}
+
 
 
     @media(max-width:767px) {
@@ -286,7 +287,7 @@ export default defineComponent({
         }
     }
     
-    @media(max-width: 1000px){
+    @media(max-width: 767px){
         .container {
             flex-direction: column;
         }
