@@ -222,6 +222,7 @@ export default defineComponent({
         font-weight: 800;
         overflow: hidden;
         border-radius: 10px;
+        text-align: right;
     }
 
     .buttons {
