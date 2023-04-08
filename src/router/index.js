@@ -14,7 +14,8 @@ const router = createRouter({
         meta: {
             title: 'Calculator',
             description: 'This is a calculator app'
-        }
+        },
+        base: "/"
         },
         {
         path: '/textanalyzer',
@@ -24,7 +25,8 @@ const router = createRouter({
         meta: {
             title: 'Text Analyzer',
             description: 'This is a text analyzer app'
-        }
+        },
+        base: "/textanalyzer"
         }
     ]
 })

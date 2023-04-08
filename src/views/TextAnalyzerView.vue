@@ -23,7 +23,7 @@ export default defineComponent({
     },
     props: {
         Title: String
-    }
+    },
 })
 </script>
 
